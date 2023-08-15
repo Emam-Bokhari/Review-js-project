@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.tailwindcss.com"></script>
+<div class="py-10">
+  <h1 class="text-center mt-10 text-black font-semibold text-3xl">Goriber Evaly Revoted 2.00 🔸 </h1>
+<div class="w-[473px] mx-auto">
+    <textarea placeholder="Enter Your Review" class=" bg-white rounded-2xl  drop-shadow-2xl resize-none mx-auto mt-5 px-2 py-5" name="" id="text-area" cols="60" rows="8"></textarea>
+    <!-- Button -->
+    <div class="flex justify-end px-3">
+        <button id="submit-btn"  class="ring-2 text-xl text-indigo-500 border-indigo-500 hover:bg-indigo-500 hover:text-white rounded-xl px-2 mt-5 ">Submit</button>
+    </div>
+    <div  id="place">
+        <h2 class="mt-10 mb-5  text-red-500 text-4xl font-semibold">User Review<span class="text-violet-600">...</span></h2>
+    </div>
+    
+</div>
+</div>
+
+
+<script>
+document.querySelector('#submit-btn').addEventListener('click',submitReview )
+function submitReview(){
+    const textArea=document.querySelector('#text-area');
+    const textAreaValue=textArea.value;
+    const userReview=document.createElement('p')
+    userReview.innerText=textAreaValue
+    const place=document.querySelector('#place');
+    place.appendChild(userReview);
+    document.querySelector('#text-area').value='';
+}
+const textArea=document.querySelector('#text-area').addEventListener('keyup', function(event){
+if(event.key==='Enter'){
+    submitReview();
+}
+})
+</script>
+
+</body>
+</html>
